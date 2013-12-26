@@ -42,7 +42,7 @@ class Db
 	
 	public function query($sql)
 	{
-		$q = $this->_pdo->query('SELECT * FROM test');
+		$q = $this->_pdo->query($sql);
 		$q->setFetchMode(PDO::FETCH_ASSOC);
 		return $q->fetchAll();
 	}
