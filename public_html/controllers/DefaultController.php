@@ -21,7 +21,7 @@ class DefaultController extends Controller
 	public function actionPdo()
 	{
 		$this->render('pdo', array(
-			// ñèíãëòîí íå óäàëñÿ)
+			// ÑÐ¸Ð½Ð³Ð»Ñ‚Ð¾Ð½ Ð½Ðµ ÑƒÐ´Ð°Ð»ÑÑ)
 			'rows' => Application::$app->db->query('SELECT * FROM test'),
 		));
 	}	
