@@ -1,5 +1,5 @@
 <h1>Default Controller</h1>
-<h2>index view</h2>
+<h2>index action</h2>
 
 
 <a href="index.php">index.php => default/index</a><br>

@@ -5,6 +5,7 @@ abstract class Controller
 	public function getId()
 	{
 		$class = get_class($this);
+		// уверен, это далеко не лучший способ, получить id контроллера..
 		return substr($class, 0, strlen($class) - strlen('Controller'));
 	}
 	
@@ -37,7 +38,7 @@ abstract class Controller
 			throw new Exception('View not found');
 	}
 	
-	//copypaste from yii
+	//взял из исходников yii, разворачваем параметры в переменные
 	public function renderInternal($_viewFile_, $_data_ = null, $_return_ = false)
 	{
 		// we use special variable names here to avoid conflict when extracting data

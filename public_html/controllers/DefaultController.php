@@ -21,6 +21,7 @@ class DefaultController extends Controller
 	public function actionPdo()
 	{
 		$this->render('pdo', array(
+			// синглтон не удался)
 			'rows' => Application::$app->db->query('SELECT * FROM test'),
 		));
 	}	
