@@ -15,20 +15,7 @@ class Db
 		try 
 		{	
 			$this->_pdo = new PDO(
-				str_replace(
-					array(
-						'{driver}',
-						'{host}',
-						'{dbname}',
-					),
-					array(
-						$this->driver,
-						$this->host,
-						$this->dbname,
-						
-					),
-					'{driver}:host={host};dbname={dbname}'
-				),
+				"$this->driver:host=$this->host;dbname=$this->dbname",
 				$this->user,
 				$this->password
 			);

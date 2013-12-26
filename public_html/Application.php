@@ -1,22 +1,22 @@
 <?php
 
-include 'Controller.php';
-
 class Application 
 {
 	public static $app;
 	
 	public $router;
 	public $db;
-	
+		
 	public function __construct($configFile)
 	{
-		$config = eval(file_get_contents($configFile));
+		$config = require_once($configFile);
 		$this->init($this, $config);
 		
 		if (!is_null($this->db))
+		{
 			$this->db->init();
-			
+		}
+		
 		self::$app = $this;
 	}
 	
@@ -38,7 +38,6 @@ class Application
 			{
 				if (is_null($obj->$key) && isset($value['class']))
 				{
-					include($value['class'] . '.php');
 					$obj->$key = new $value['class'];
 				}
 				
@@ -49,7 +48,7 @@ class Application
 	
 	public function run()
 	{
-		$route = $this->router->parseRoute($_GET['r']);
+		$route = $this->router->parseRoute(isset($_GET['r']) ? $_GET['r'] : '');
 		
 		$controllerId = $route[0];
 		$actionId = $route[1];

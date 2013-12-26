@@ -1,1 +1,1 @@
-return array(	'db' => array(		'class' => 'Db',		'dbname' => 'mvc',		'user' => 'root',		'password' => 'root',		'host' => 'localhost',	),	'router' => array(		'class' => 'Router',		'defaultController' => 'default',		'defaultAction' => 'index',	),);
+<?phpreturn array(	'db' => array(		'class' => 'Db',		'dbname' => 'mvc',		'user' => 'root',		'password' => 'root',		'host' => 'localhost',	),	'router' => array(		'class' => 'Router',		'defaultController' => 'default',		'defaultAction' => 'index',	),);

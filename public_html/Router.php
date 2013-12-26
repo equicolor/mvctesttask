@@ -12,7 +12,7 @@ class Router
 		
 		if (isset($route) && !empty($route))
 		{
-			if ($pos = strpos($_GET['r'], '/'))
+			if ($pos = strpos($route, '/'))
 			{
 				$controller = substr($route, 0, $pos);
 				$action = substr($route, $pos + 1);
